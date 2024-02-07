@@ -1,7 +1,26 @@
 @extends('layouts.admin')
 
 @section('content')
-    <h1>Elenco dei Progetti</h1>
+    <header>
+        <h1>Elenco dei Progetti</h1>
+        <a href="{{ route('admin.projects.create') }}" role="button" class="btn btn-primary btn-sm my-2">Crea un nuovo
+            progetto</a>
+
+    </header>
+    @if (session('message'))
+        <div class="toast-container position-fixed bottom-0 end-0 p-3">
+            <div id="liveToast" class="toast-show" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <strong class="me-auto">Notifica</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body">
+                    {{ session('message') }}
+                </div>
+            </div>
+        </div>
+    @endif
+    <hr>
     <table class="table">
         <thead>
             <tr>
@@ -18,7 +37,7 @@
                     <td>{{ $project->title }}</td>
                     <td>{{ $project->slug }}</td>
                     <td>
-                        <a href="" role="button" class="btn btn-primary btn-sm">Crea</a>
+                        <a href="" role="button" class="btn btn-primary btn-sm">Modifica</a>
                         <a href="{{ route('admin.projects.show', $project) }}" role="button"
                             class="btn btn-info btn-sm">Dettagli</a>
                         <a href="" role="button" class="btn btn-danger btn-sm">Elimina</a>
@@ -27,9 +46,4 @@
             @endforeach
         </tbody>
     </table>
-    <ul>
-
-        <li>{{ $project->title }}</li>
-
-    </ul>
 @endsection
