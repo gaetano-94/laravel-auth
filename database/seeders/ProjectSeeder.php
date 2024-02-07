@@ -20,9 +20,11 @@ class ProjectSeeder extends Seeder
         for ($i = 0; $i < 20; $i++) {
 
             $project = new Project();
+
             $project->title = $project->sentence(3);
             $project->content = $project->text(500);
             $project->slug = Str::of('$project->title')->slug('-');
+
             $project->save();
         }
     }
