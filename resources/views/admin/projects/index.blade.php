@@ -19,7 +19,8 @@
                     <td>{{ $project->slug }}</td>
                     <td>
                         <a href="" role="button" class="btn btn-primary btn-sm">Crea</a>
-                        <a href="" role="button" class="btn btn-info btn-sm">Dettagli</a>
+                        <a href="{{ route('admin.projects.show', $project) }}" role="button"
+                            class="btn btn-info btn-sm">Dettagli</a>
                         <a href="" role="button" class="btn btn-danger btn-sm">Elimina</a>
                     </td>
                 </tr>
