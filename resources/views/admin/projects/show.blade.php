@@ -1,7 +1,9 @@
 @extends('layouts.admin')
 
 @section('content')
-    <h1>{{ $project->title }}</h1>
+    <header class="d-flex justify-content-between align-items-center my-2">
+        <h1>{{ $project->title }}</h1>
+        <a href="{{ route('admin.projects.index') }}" class="btn btn-primary btn-sm" role="button">Torna ai Progetti</a>
+    </header>
     <p>{{ $project->content }}</p>
-    <a href="{{ route('admin.projects.index') }}" class="btn btn-primary btn-sm" role="button">Torna alla Lista</a>
 @endsection

@@ -1,7 +1,8 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div class="container">
+    <h1 class="text-center py-2"><strong>Ti sei Loggato!</strong></h1>
+    {{-- <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8 mt-4">
                 <div class="card">
@@ -19,5 +20,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 @endsection

@@ -1,11 +1,10 @@
 @extends('layouts.admin')
 
 @section('content')
-    <header>
-        <h1>Elenco dei Progetti</h1>
-        <a href="{{ route('admin.projects.create') }}" role="button" class="btn btn-primary btn-sm my-2">Crea un nuovo
+    <header class="d-flex justify-content-between align-items-center mt-2">
+        <h1><strong>Elenco dei Progetti</strong></h1>
+        <a href="{{ route('admin.projects.create') }}" role="button" class="btn btn-success btn-sm my-2">Crea un nuovo
             progetto</a>
-
     </header>
     @if (session('message'))
         <div class="toast-container position-fixed bottom-0 end-0 p-3">
@@ -24,9 +23,9 @@
     <table class="table">
         <thead>
             <tr>
-                <th scope="col">Id</th>
-                <th scope="col">Titolo</th>
-                <th scope="col">Slug</th>
+                <th scope="col"><strong>ID</strong></th>
+                <th scope="col"><strong>TITOLO</strong></th>
+                <th scope="col"><strong>SLUG</strong></th>
                 <th scope="col"></th>
             </tr>
         </thead>
@@ -37,9 +36,9 @@
                     <td>{{ $project->title }}</td>
                     <td>{{ $project->slug }}</td>
                     <td>
-                        <a href="" role="button" class="btn btn-primary btn-sm">Modifica</a>
                         <a href="{{ route('admin.projects.show', $project) }}" role="button"
-                            class="btn btn-info btn-sm">Dettagli</a>
+                            class="btn btn-warning btn-sm">Dettagli</a>
+                        <a href="" role="button" class="btn btn-primary btn-sm">Modifica</a>
                         <a href="" role="button" class="btn btn-danger btn-sm">Elimina</a>
                     </td>
                 </tr>

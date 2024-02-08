@@ -1,7 +1,11 @@
 @extends('layouts.admin')
 
 @section('content')
-    <h1>Creazione Nuovo Progetto</h1>
+    <header class="d-flex justify-content-between align-items-center mt-2">
+        <h1>Creazione Nuovo Progetto</h1>
+        <a href="{{ route('admin.projects.index') }}" class="btn btn-primary btn-sm my-2" role="button">Torna ai Progetti</a>
+    </header>
+
     <form action="{{ route('admin.projects.store') }}" method="POST">
         @csrf
         <div class="mb-3">
@@ -22,6 +26,6 @@
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
         </div>
-        <button class="btn btn-primary">Crea</button>
+        <button class="btn btn-success">Crea</button>
     </form>
 @endsection
