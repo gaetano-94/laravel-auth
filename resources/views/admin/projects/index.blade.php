@@ -38,8 +38,18 @@
                     <td>
                         <a href="{{ route('admin.projects.show', $project) }}" role="button"
                             class="btn btn-warning btn-sm">Dettagli</a>
-                        <a href="" role="button" class="btn btn-primary btn-sm">Modifica</a>
-                        <a href="" role="button" class="btn btn-danger btn-sm">Elimina</a>
+
+                        <a href="{{ route('admin.projects.edit', $project->slug) }}" role="button"
+                            class="btn btn-primary btn-sm">Modifica</a>
+
+                        <form action="{{ route('admin.projects.destroy', $project->slug) }}" method="POST">
+                            @csrf
+
+                            @method('DELETE')
+
+                            <input type="submit" value="Elimina" class="btn btn-danger btn-sm mt-1">
+
+                        </form>
                     </td>
                 </tr>
             @endforeach
