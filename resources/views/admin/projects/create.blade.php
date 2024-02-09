@@ -5,7 +5,7 @@
         <h1>Creazione Nuovo Progetto</h1>
         <a href="{{ route('admin.projects.index') }}" class="btn btn-primary btn-sm my-2" role="button">Torna ai Progetti</a>
     </header>
-
+    <hr>
     <form action="{{ route('admin.projects.store') }}" method="POST">
         @csrf
         <div class="mb-3">
